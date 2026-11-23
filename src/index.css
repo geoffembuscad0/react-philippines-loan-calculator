@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap');
+@import "tailwindcss";
+
+
+:root{
+  --bg:#F5F6F8;
+  --surface:#FFFFFF;
+  --surface-2:#EFF1F7;
+  --surface-3:#E7EAF3;
+  --text:#101423;
+  --muted:#667085;
+  --muted-2:#98A2B3;
+  --border:#E4E7EF;
+  --accent:#2563EB;
+  --accent-2:#7C3AED;
+  --accent-soft:#E8EFFE;
+  --violet-soft:#F0EBFF;
+  --success:#0E9F6E;
+  --success-soft:#E6F7EF;
+  --warn:#E8590C;
+  --warn-soft:#FFF0E6;
+  --danger:#E03131;
+  --danger-soft:#FFEAEA;
+  --shadow:0 10px 30px rgba(16,20,35,.07), 0 2px 8px rgba(16,20,35,.04);
+  --shadow-lg:0 22px 48px rgba(16,20,35,.10);
+}
+[data-theme="dark"]{
+  --bg:#0B0F1A;
+  --surface:#151B2D;
+  --surface-2:#1D253A;
+  --surface-3:#262F4B;
+  --text:#F2F4FA;
+  --muted:#A7B0C6;
+  --muted-2:#7E8AA6;
+  --border:#262F4B;
+  --accent:#5B8CFF;
+  --accent-2:#A78BFA;
+  --accent-soft:#1C2A4F;
+  --violet-soft:#251F43;
+  --success:#34D399;
+  --success-soft:#123527;
+  --warn:#FFB020;
+  --warn-soft:#3A2A12;
+  --danger:#FF6B6B;
+  --danger-soft:#3A1B22;
+  --shadow:0 14px 34px rgba(0,0,0,.38), 0 2px 10px rgba(0,0,0,.25);
+  --shadow-lg:0 26px 56px rgba(0,0,0,.45);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0F1A;
+    --surface:#151B2D;
+    --surface-2:#1D253A;
+    --surface-3:#262F4B;
+    --text:#F2F4FA;
+    --muted:#A7B0C6;
+    --muted-2:#7E8AA6;
+    --border:#262F4B;
+    --accent:#5B8CFF;
+    --accent-2:#A78BFA;
+    --accent-soft:#1C2A4F;
+    --violet-soft:#251F43;
+    --success:#34D399;
+    --success-soft:#123527;
+    --warn:#FFB020;
+    --warn-soft:#3A2A12;
+    --danger:#FF6B6B;
+    --danger-soft:#3A1B22;
+    --shadow:0 14px 34px rgba(0,0,0,.38), 0 2px 10px rgba(0,0,0,.25);
+    --shadow-lg:0 26px 56px rgba(0,0,0,.45);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text)}
+input,select,button{font-family:inherit}
+input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input[type="number"]{-moz-appearance:textfield;appearance:textfield}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:999px;background:linear-gradient(to right,var(--accent) var(--fill,50%),var(--surface-3) var(--fill,50%));outline:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:6px solid var(--accent);box-shadow:0 4px 12px rgba(37,99,235,.35);cursor:pointer}
+input[type="range"]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:6px solid var(--accent);box-shadow:0 4px 12px rgba(37,99,235,.35);cursor:pointer}
+.field{width:100%;min-width:0;border:1.5px solid var(--border);background:var(--surface);color:var(--text);border-radius:16px;padding:12px 14px;font-size:15px;font-weight:600;outline:none;transition:.15s}
+.field:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.field::placeholder{color:var(--muted-2);font-weight:500}
+.label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block}
+.chip{border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;white-space:nowrap;transition:.15s}
+.chip.active{background:var(--text);color:var(--surface);border-color:var(--text)}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none}
+
+/* iOS Safari zooms into inputs below 16px — keep them at 16px on touch-size screens */
+@media (max-width:1023px){.field{font-size:16px}}
